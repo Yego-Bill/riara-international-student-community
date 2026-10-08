@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Staff Dashboard | Riara University International Students</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon/favicon-180.png">
+<link rel="stylesheet" href="css/Full_style.css">
+</head>
+<body>
+
+<!-- ============ Utility bar ============ -->
+<div class="utility-bar">
+  <div class="container">
+    <a href="mailto:internationalstudents@riarauniversity.ac.ke">✉️ internationalstudents@riarauniversity.ac.ke</a>
+    <a href="tel:+254758004928">📞 +254 758 004928</a>
+    <span>📍 Riara University, Nairobi</span>
+  </div>
+</div>
+
+<!-- ============ Main nav ============ -->
+<nav class="main-nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-name">RIS<span>C</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="get-started.html">Get Started</a></li>
+      <li><a href="immigration.html">Immigration</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ Page header ============ -->
+<header class="page-header">
+  <div class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> / Staff Dashboard</p>
+    <h1>Staff Dashboard</h1>
+  </div>
+</header>
+
+<!-- ============ Staff sign in ============ -->
+<section class="auth-section" id="staffGate">
+  <div class="auth-card">
+    <span class="auth-preview-tag">🚧 Preview — sample data only</span>
+    <h2>Staff sign in</h2>
+    <p class="auth-subtext">Only approved staff accounts can open the dashboard.</p>
+
+    <div class="auth-banner" id="staffError"></div>
+
+    <form class="auth-form is-active" id="staffSignInForm">
+      <div class="form-group">
+        <label for="staff-email">Staff email address</label>
+        <input type="email" id="staff-email" placeholder="name@riarauniversity.ac.ke" required>
+      </div>
+      <div class="form-group">
+        <label for="staff-password">Password</label>
+        <input type="password" id="staff-password" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+
+    <p class="auth-switch-text">Preview only: no real accounts exist yet, so any password is accepted for an approved address.</p>
+  </div>
+</section>
+
+<!-- ============ Dashboard ============ -->
+<section class="page-section" id="staffApp" hidden>
+  <div class="container">
+    <span class="auth-preview-tag">🚧 Preview — sample data only</span>
+
+    <div class="staff-bar">
+      <p class="who">Signed in as <strong id="staffWho"></strong></p>
+      <div class="staff-bar-actions">
+        <button type="button" class="btn btn-secondary btn-small" id="resetBtn">Reset sample data</button>
+        <button type="button" class="btn btn-secondary btn-small" id="signOutBtn">Sign out</button>
+      </div>
+    </div>
+
+    <div class="filters">
+      <input type="search" id="searchInput" placeholder="Search by name, student ID or email" aria-label="Search submissions">
+      <select id="statusFilter" aria-label="Filter by status"></select>
+      <label class="filter-date">Submitted from <input type="date" id="dateFilter"></label>
+    </div>
+    <p class="results-count" id="resultsCount"></p>
+
+    <div class="table-wrap">
+      <table class="sub-table">
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Student ID</th>
+            <th>Country</th>
+            <th>Status</th>
+            <th>Submitted</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <div class="detail-panel" id="detailPanel"></div>
+  </div>
+</section>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Riara International Student Centre</h4>
+        <p>A welcome hub for Riara University's international students, built to make your transition easier.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="get-started.html">Get Started</a></li>
+          <li><a href="immigration.html">Immigration</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:internationalstudents@riarauniversity.ac.ke">internationalstudents@riarauniversity.ac.ke</a></li>
+          <li><a href="tel:+254758004928">+254 758 004928</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Riara University — International Student Support. Built by the Office of the International Student Leader.
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
