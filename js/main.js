@@ -102,13 +102,25 @@ if (goToSignIn) {
   });
 }
 
-// Simulated account flow (preview only — nothing is really stored/sent):
-// Sign Up -> switches to Sign In with a message -> successful Sign In -> Upload page.
+// Simulated account flow (preview only — nothing is really stored or sent):
+// Sign Up -> switches to Sign In -> Sign In. Students go to the upload page,
+// approved staff go to the staff dashboard.
 
 if (signUpForm) {
   signUpForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const email = document.getElementById('signup-email').value;
+    const email = document.getElementById('signup-email').value.trim().toLowerCase();
+
+    // Staff addresses sign in; they do not create student accounts
+    if (typeof isStaffEmail === 'function' && isStaffEmail(email)) {
+      showBanner("This is a staff address. Please sign in instead.");
+      setTimeout(() => {
+        showSignIn();
+        document.getElementById('signin-email').value = email;
+        hideBanner();
+      }, 1400);
+      return;
+    }
 
     // Remember this email in the browser only, just so Sign In can recognize it in this demo
     localStorage.setItem('riara-preview-account-email', email);
@@ -125,10 +137,25 @@ if (signUpForm) {
 if (signInForm) {
   signInForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const email = document.getElementById('signin-email').value;
+    const email = document.getElementById('signin-email').value.trim().toLowerCase();
+
+    // Approved staff go to the staff dashboard
+    if (typeof isStaffEmail === 'function' && isStaffEmail(email)) {
+      try { sessionStorage.setItem(STAFF_SESSION_KEY, email); } catch (err) { /* ignore */ }
+      showBanner("Signed in as staff. Opening the dashboard...");
+      setTimeout(() => {
+        window.location.href = 'staff.html';
+      }, 900);
+      return;
+    }
+
+    // Students go to the upload page
     const knownEmail = localStorage.getItem('riara-preview-account-email');
 
-    if (knownEmail && email === knownEmail) {
+    if (knownEmail && email === knownEmail.toLowerCase()) {
+      if (typeof STAFF_SESSION_KEY !== 'undefined') {
+        try { sessionStorage.removeItem(STAFF_SESSION_KEY); } catch (err) { /* ignore */ }
+      }
       showBanner("Signed in! Redirecting to your document upload page...");
       setTimeout(() => {
         window.location.href = 'upload.html';

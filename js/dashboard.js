@@ -57,15 +57,6 @@ const REQUIRED_DOCS = [
 ];
 
 const STORE_KEY = 'riara-preview-submissions';
-const SESSION_KEY = 'riara-preview-staff-email';
-
-// Accounts allowed to open the staff dashboard.
-// Replace the last two with the confirmed addresses.
-const STAFF_ALLOWLIST = [
-  'internationalstudents@riarauniversity.ac.ke',
-  'frontoffice@riarauniversity.ac.ke',
-  'dean@riarauniversity.ac.ke'
-];
 
 /* -------------------- Helpers -------------------- */
 
@@ -194,12 +185,18 @@ function loadSubmissions() {
    ========================================================================== */
 
 function initStaffPage() {
-  const staffGate = document.getElementById('staffGate');
   const staffApp = document.getElementById('staffApp');
-  if (!staffGate || !staffApp) return;
+  const staffChecking = document.getElementById('staffChecking');
+  if (!staffApp) return;
 
-  const staffForm = document.getElementById('staffSignInForm');
-  const staffError = document.getElementById('staffError');
+  // Only staff who signed in on the shared sign-in page may be here.
+  let staffEmail = null;
+  try { staffEmail = sessionStorage.getItem(STAFF_SESSION_KEY); } catch (err) { /* ignore */ }
+  if (!staffEmail || !isStaffEmail(staffEmail)) {
+    window.location.replace('account.html');
+    return;
+  }
+
   const staffWho = document.getElementById('staffWho');
   const signOutBtn = document.getElementById('signOutBtn');
   const resetBtn = document.getElementById('resetBtn');
@@ -218,39 +215,13 @@ function initStaffPage() {
       return '<option value="' + escapeHtml(st) + '">' + escapeHtml(st) + '</option>';
     }).join('');
 
-  /* ----- Sign in ----- */
-
-  function showApp(email) {
-    staffGate.hidden = true;
-    staffApp.hidden = false;
-    staffWho.textContent = email;
-    renderTable();
-  }
-
-  function showGate() {
-    closeDetail();
-    staffApp.hidden = true;
-    staffGate.hidden = false;
-  }
-
-  staffForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const email = document.getElementById('staff-email').value.trim().toLowerCase();
-
-    if (STAFF_ALLOWLIST.indexOf(email) === -1) {
-      staffError.textContent = 'This account is not approved for staff access.';
-      staffError.classList.add('is-visible');
-      return;
-    }
-
-    staffError.classList.remove('is-visible');
-    try { sessionStorage.setItem(SESSION_KEY, email); } catch (err) { /* ignore */ }
-    showApp(email);
-  });
+  staffWho.textContent = staffEmail;
+  if (staffChecking) staffChecking.hidden = true;
+  staffApp.hidden = false;
 
   signOutBtn.addEventListener('click', function () {
-    try { sessionStorage.removeItem(SESSION_KEY); } catch (err) { /* ignore */ }
-    showGate();
+    try { sessionStorage.removeItem(STAFF_SESSION_KEY); } catch (err) { /* ignore */ }
+    window.location.href = 'account.html';
   });
 
   resetBtn.addEventListener('click', function () {
@@ -456,13 +427,7 @@ function initStaffPage() {
     }
   });
 
-  /* ----- Restore an existing session ----- */
-
-  let savedEmail = null;
-  try { savedEmail = sessionStorage.getItem(SESSION_KEY); } catch (err) { /* ignore */ }
-  if (savedEmail && STAFF_ALLOWLIST.indexOf(savedEmail) !== -1) {
-    showApp(savedEmail);
-  }
+  renderTable();
 }
 
 /* ==========================================================================

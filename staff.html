@@ -54,28 +54,10 @@
   </div>
 </header>
 
-<!-- ============ Staff sign in ============ -->
-<section class="auth-section" id="staffGate">
-  <div class="auth-card">
-    <span class="auth-preview-tag">🚧 Preview — sample data only</span>
-    <h2>Staff sign in</h2>
-    <p class="auth-subtext">Only approved staff accounts can open the dashboard.</p>
-
-    <div class="auth-banner" id="staffError"></div>
-
-    <form class="auth-form is-active" id="staffSignInForm">
-      <div class="form-group">
-        <label for="staff-email">Staff email address</label>
-        <input type="email" id="staff-email" placeholder="name@riarauniversity.ac.ke" required>
-      </div>
-      <div class="form-group">
-        <label for="staff-password">Password</label>
-        <input type="password" id="staff-password" placeholder="••••••••" required>
-      </div>
-      <button type="submit" class="btn btn-primary">Sign in</button>
-    </form>
-
-    <p class="auth-switch-text">Preview only: no real accounts exist yet, so any password is accepted for an approved address.</p>
+<!-- ============ Sign-in check ============ -->
+<section class="page-section" id="staffChecking">
+  <div class="container">
+    <p class="checking-msg">Checking your sign-in...</p>
   </div>
 </section>
 
@@ -151,6 +133,7 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/staff-access.js"></script>
 <script src="js/dashboard.js"></script>
 </body>
 </html>

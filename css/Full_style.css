@@ -1416,3 +1416,7 @@ a:focus-visible, button:focus-visible {
   .filters { grid-template-columns: 1fr; }
   .doc-row { grid-template-columns: 1fr; }
 }
+
+/* -------- Sign-in note and staff check message -------- */
+.field-note { font-size: 0.8rem; color: var(--color-ink-soft); margin-top: -0.4rem; }
+.checking-msg { text-align: center; color: var(--color-ink-soft); padding: var(--space-2xl) 0; }
