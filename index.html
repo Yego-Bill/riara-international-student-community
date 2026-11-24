@@ -21,9 +21,8 @@
 <script src="js/layout.js"></script>
 
 <!-- ============ Announcement ============ -->
-<!-- Shown only when there's something to announce. Remove the "hidden"
-     attribute and edit the text to show it. (Later this will come from the
-     staff dashboard instead.) -->
+<!-- Filled in from the staff dashboard (Announcements tab). Hidden when
+     there is no active announcement. -->
 <div class="announcement-bar" hidden>
   <div class="container">
     <strong>Announcement:</strong> <span>Text of the announcement goes here.</span>
@@ -83,8 +82,8 @@
 </section>
 
 <!-- ============ Upcoming events ============ -->
-<!-- Keep this to the next 2–3 events. The full list is on events.html.
-     (Later these will come from the staff dashboard.) -->
+<!-- The next 3 events, filled in from the staff dashboard (Events tab).
+     The card below shows only if the database can't be reached. -->
 <section class="home-events">
   <div class="container">
     <div class="section-heading section-heading-row">
@@ -92,7 +91,7 @@
       <a href="events.html" class="see-all">See all events →</a>
     </div>
 
-    <div class="event-list">
+    <div class="event-list" data-events="3">
       <div class="event-card">
         <div class="event-date-badge is-tba">
           <span class="day">TBA</span>
@@ -132,6 +131,10 @@
 </section>
 
 <div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/api.js"></script>
 <script src="js/main.js"></script>
+<script src="js/site-data.js"></script>
 </body>
 </html>

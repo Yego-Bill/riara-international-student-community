@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Staff dashboard | Riara University International Students</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/favicon/favicon-180.png">
+<link rel="stylesheet" href="../css/Full_style.css">
+</head>
+<body data-page="portal">
+
+<div id="site-header"></div>
+<script src="../js/layout.js"></script>
+<div id="pilotBanner"></div>
+
+<header class="page-header">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / Staff dashboard</p>
+    <h1>Staff dashboard</h1>
+  </div>
+</header>
+
+<section class="page-section portal-section">
+  <div class="container container-wide">
+    <div class="portal-bar">
+      <p class="who">Signed in as <strong id="whoName"></strong> <span class="muted">(staff)</span></p>
+      <button type="button" class="btn btn-secondary btn-small" id="signOutBtn">Sign out</button>
+    </div>
+
+    <p class="checking-msg" id="loading">Loading…</p>
+    <div class="auth-banner" id="pageError" role="alert"></div>
+
+    <div class="tabs-nav" role="tablist" id="staffTabs" hidden>
+      <button class="tab-btn" role="tab" aria-selected="true" aria-controls="panel-apps" id="tab-apps">Applications</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-ann" id="tab-ann">Announcements</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-events" id="tab-events">Events</button>
+    </div>
+
+    <!-- ===== Applications ===== -->
+    <div class="tab-panel is-active" id="panel-apps" role="tabpanel" aria-labelledby="tab-apps" hidden>
+      <div class="filters">
+        <input type="search" id="searchInput" placeholder="Search name, student ID or email" aria-label="Search">
+        <select id="statusFilter" aria-label="Filter by status"></select>
+        <select id="passFilter" aria-label="Filter by pass">
+          <option value="">All passes</option>
+          <option value="student_pass">Student Pass</option>
+          <option value="internship_research_pass">Internship / Research Pass</option>
+        </select>
+        <select id="assignFilter" aria-label="Filter by who's handling it">
+          <option value="">Anyone</option>
+          <option value="me">Assigned to me</option>
+          <option value="none">Unassigned</option>
+        </select>
+        <button type="button" class="btn btn-secondary btn-small" id="refreshBtn">Refresh</button>
+      </div>
+      <p class="results-count" id="resultsCount"></p>
+      <div class="table-wrap">
+        <table class="sub-table">
+          <thead>
+            <tr><th>Student</th><th>Student ID</th><th>Pass</th><th>Status</th><th>Handled by</th><th>Submitted</th><th></th></tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+      <div class="detail-panel" id="detailPanel"></div>
+    </div>
+
+    <!-- ===== Announcements ===== -->
+    <div class="tab-panel" id="panel-ann" role="tabpanel" aria-labelledby="tab-ann" hidden>
+      <form id="annForm" class="inline-form">
+        <label for="annMessage">New announcement <span class="muted">(shown as a banner on the Home page)</span></label>
+        <div class="inline-form-row">
+          <input type="text" id="annMessage" maxlength="300" placeholder="e.g. The office is closed on Friday" required>
+          <button type="submit" class="btn btn-primary btn-small">Post</button>
+        </div>
+      </form>
+      <ul class="manage-list" id="annList"></ul>
+    </div>
+
+    <!-- ===== Events ===== -->
+    <div class="tab-panel" id="panel-events" role="tabpanel" aria-labelledby="tab-events" hidden>
+      <form id="eventForm" class="inline-form event-form">
+        <input type="hidden" id="eventId">
+        <div class="form-grid">
+          <div class="form-group"><label for="eventTitle">Title</label><input type="text" id="eventTitle" maxlength="120" required></div>
+          <div class="form-group"><label for="eventDate">Date <span class="muted">(leave empty for "to be announced")</span></label><input type="date" id="eventDate"></div>
+          <div class="form-group"><label for="eventWhere">Time &amp; place</label><input type="text" id="eventWhere" maxlength="120" placeholder="e.g. 2pm, Main Hall"></div>
+          <div class="form-group form-grid-wide"><label for="eventDesc">Description</label><input type="text" id="eventDesc" maxlength="300"></div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-small" id="eventSaveBtn">Add event</button>
+        <button type="button" class="btn btn-secondary btn-small" id="eventCancelBtn" hidden>Cancel editing</button>
+      </form>
+      <ul class="manage-list" id="eventList"></ul>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase-config.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/portal/staff.js"></script>
+</body>
+</html>

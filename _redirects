@@ -5,3 +5,8 @@
 /resources          /living-in-kenya          301
 /downloads.html     /immigration.html         301
 /downloads          /immigration              301
+# Old online-application preview pages -> the real portal
+/account.html       /portal/sign-in.html          301
+/upload.html        /portal/apply.html            301
+/status.html        /portal/my-application.html   301
+/staff.html         /portal/staff.html            301

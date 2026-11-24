@@ -15,12 +15,34 @@ and JavaScript — no framework, no build step. Hosted on Netlify from GitHub.
 | Events (not in menu) | `events.html` | Full events list, linked from Home |
 | Community (not in menu) | `community.html` | WhatsApp community details, linked from Home and footer |
 
-`account.html`, `upload.html`, `status.html` and `staff.html` are the online
-application preview. They are being rebuilt with a real database (Supabase).
+## Online application portal (`portal/`)
+
+| Page | Who | What |
+|---|---|---|
+| `portal/sign-in.html` | everyone | Sign in / create account (Riara student emails only) |
+| `portal/check-email.html`, `verified.html` | students | Email verification |
+| `portal/forgot-password.html`, `reset-password.html` | everyone | Password reset |
+| `portal/my-application.html` | students | Live status bar, office message, documents, history |
+| `portal/apply.html` | students | Choose pass, upload documents, submit |
+| `portal/staff.html` | staff | Applications, announcements, events |
+| `portal/pilot-notice.html` | everyone | What the pilot collects and when it's deleted |
+
+- **Database:** Supabase. `supabase/setup.sql` creates every table, security
+  rule and the private file bucket — paste it into Supabase > SQL Editor and Run.
+- **All database code** is in `js/api.js`. Pages never call Supabase directly.
+- **Connection settings** are in `js/supabase-config.js` (public key only —
+  never put the secret / service_role key in the website).
+- **Pilot banner:** set `PILOT_MODE: false` in `js/supabase-config.js` when
+  real applications start.
+- **Staff:** listed in the `staff_emails` table (see the top of `setup.sql`).
+- **Live content:** `js/site-data.js` loads announcements and events on the
+  public pages, and saves checklist ticks for signed-in students.
 
 ## Where to change things
 
 - **Menu, top contact bar, footer:** `js/layout.js` — edit once, every page updates.
+- **Announcements and events:** from the staff dashboard, not the code.
+- **Upload checklist and status names:** `DOC_CHECKLIST` and `STATUSES` in `js/api.js`.
 - **Colours, fonts, spacing:** the top of `css/Full_style.css`.
 - **Downloadable PDFs:** put them in `assets/Documents/`, then replace the
   "Coming soon" button on the page with a Download link (each one has a TODO).

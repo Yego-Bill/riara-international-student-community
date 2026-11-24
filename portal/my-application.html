@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>My application | Riara University International Students</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/favicon/favicon-180.png">
+<link rel="stylesheet" href="../css/Full_style.css">
+</head>
+<body data-page="portal">
+
+<div id="site-header"></div>
+<script src="../js/layout.js"></script>
+<div id="pilotBanner"></div>
+
+<header class="page-header">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / My application</p>
+    <h1>My application</h1>
+  </div>
+</header>
+
+<section class="page-section portal-section">
+  <div class="container">
+    <div class="portal-bar">
+      <p class="who">Signed in as <strong id="whoName"></strong> <span class="muted" id="whoEmail"></span></p>
+      <button type="button" class="btn btn-secondary btn-small" id="signOutBtn">Sign out</button>
+    </div>
+
+    <p class="checking-msg" id="loading">Loading your application…</p>
+    <div class="auth-banner" id="pageError" role="alert"></div>
+
+    <!-- No application yet -->
+    <div id="noApplication" hidden>
+      <div class="empty-state">
+        <h2>Apply online for your pass</h2>
+        <p>Upload your documents here instead of bringing paper copies. Kelvin reviews them and you can follow every step on this page.</p>
+        <a href="apply.html" class="btn btn-primary">Start an application</a>
+      </div>
+    </div>
+
+    <!-- Unfinished application -->
+    <div id="draftApplication" hidden>
+      <div class="empty-state">
+        <h2>Finish your application</h2>
+        <p>You've started an application but haven't submitted it yet.</p>
+        <a href="#" id="continueDraft" class="btn btn-primary">Continue</a>
+      </div>
+    </div>
+
+    <!-- Submitted application -->
+    <div id="application" hidden>
+      <div class="app-summary">
+        <div>
+          <h2 id="appTitle"></h2>
+          <p class="muted" id="appMeta"></p>
+        </div>
+        <span class="status-badge" id="appBadge"></span>
+      </div>
+
+      <ol class="status-bar" id="statusBar" aria-label="Application progress"></ol>
+      <p class="status-explainer" id="statusExplainer"></p>
+
+      <div class="notice-box office-message" id="officeMessage" hidden>
+        <h4>Message from the office</h4>
+        <p id="officeMessageText"></p>
+      </div>
+
+      <div id="missingDocsAction" hidden>
+        <a href="#" id="addDocsLink" class="btn btn-primary">Add or replace documents</a>
+      </div>
+
+      <div class="portal-columns">
+        <div>
+          <h3>Your documents</h3>
+          <ul class="doc-list" id="docList"></ul>
+        </div>
+        <div>
+          <h3>History</h3>
+          <ol class="history-list" id="historyList"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase-config.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/portal/my-application.js"></script>
+</body>
+</html>

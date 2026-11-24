@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Sign in | Riara University International Students</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/favicon/favicon-180.png">
+<link rel="stylesheet" href="../css/Full_style.css">
+</head>
+<body data-page="portal">
+
+<div id="site-header"></div>
+<script src="../js/layout.js"></script>
+<div id="pilotBanner"></div>
+
+<header class="page-header">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / Sign in</p>
+    <h1>Sign in</h1>
+  </div>
+</header>
+
+<section class="auth-section">
+  <div class="auth-card">
+    <div class="auth-toggle" role="tablist">
+      <button type="button" id="toggleSignIn" class="is-active" role="tab" aria-selected="true">Sign in</button>
+      <button type="button" id="toggleSignUp" role="tab" aria-selected="false">Create account</button>
+    </div>
+
+    <div class="auth-banner" id="authBanner" role="alert"></div>
+
+    <!-- ===== Sign in ===== -->
+    <form class="auth-form is-active" id="signInForm" novalidate>
+      <h2>Welcome back</h2>
+      <p class="auth-subtext">Sign in to apply online and follow your application.</p>
+      <div class="form-group">
+        <label for="signin-email">Email address</label>
+        <input type="email" id="signin-email" autocomplete="email" required>
+      </div>
+      <div class="form-group">
+        <label for="signin-password">Password</label>
+        <input type="password" id="signin-password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Sign in</button>
+      <p class="auth-switch-text"><a href="forgot-password.html">Forgot your password?</a></p>
+      <p class="auth-switch-text" id="resendWrap" hidden>
+        Didn't get the verification email? <a href="#" id="resendLink">Send it again</a>
+      </p>
+    </form>
+
+    <!-- ===== Create account ===== -->
+    <form class="auth-form" id="signUpForm" novalidate>
+      <h2>Create your account</h2>
+      <p class="auth-subtext">For Riara University students. Use your student email.</p>
+      <div class="form-group">
+        <label for="signup-name">Full name</label>
+        <input type="text" id="signup-name" autocomplete="name" placeholder="As shown on your passport" maxlength="120" required>
+      </div>
+      <div class="form-group">
+        <label for="signup-email">Student email</label>
+        <input type="email" id="signup-email" autocomplete="email" placeholder="you@stu.riarauniversity.ac.ke" required>
+        <span class="field-hint">Must end in @stu.riarauniversity.ac.ke</span>
+      </div>
+      <div class="form-group">
+        <label for="signup-studentid">Student ID / admission number</label>
+        <input type="text" id="signup-studentid" maxlength="40" required>
+      </div>
+      <div class="form-group">
+        <label for="signup-country">Country of citizenship</label>
+        <input type="text" id="signup-country" autocomplete="country-name" maxlength="80" required>
+      </div>
+      <div class="form-group">
+        <label for="signup-phone">Phone number <span class="muted">(optional — so the office can reach you)</span></label>
+        <input type="tel" id="signup-phone" autocomplete="tel" maxlength="30" placeholder="+254 7XX XXX XXX">
+      </div>
+      <div class="form-group">
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" autocomplete="new-password" required>
+        <ul class="password-rules" id="passwordRules">
+          <li data-rule="length">At least 8 characters</li>
+          <li data-rule="upper">A capital letter</li>
+          <li data-rule="lower">A small letter</li>
+          <li data-rule="digit">A number</li>
+        </ul>
+      </div>
+      <div class="form-group">
+        <label for="signup-confirm">Confirm password</label>
+        <input type="password" id="signup-confirm" autocomplete="new-password" required>
+        <span class="password-mismatch-hint" id="mismatchHint">Passwords don't match yet.</span>
+      </div>
+      <label class="terms-check">
+        <input type="checkbox" id="signup-agree" required>
+        I have read the <a href="pilot-notice.html" target="_blank">pilot notice</a> and understand this is a test.
+      </label>
+      <button type="submit" class="btn btn-primary" id="createAccountBtn">Create account</button>
+    </form>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase-config.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/portal/password-rules.js"></script>
+<script src="../js/portal/sign-in.js"></script>
+</body>
+</html>

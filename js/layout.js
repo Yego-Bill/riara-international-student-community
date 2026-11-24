@@ -50,7 +50,11 @@
       item.id === current ? 'aria-current="page"' : '',
     ].join(' ');
     return `<li><a ${attrs}>${item.label}</a></li>`;
-  }).join('');
+  }).join('') +
+    // Says "Sign in"; api.js changes it to "My application" or
+    // "Staff dashboard" on pages that load it, once someone is signed in.
+    `<li><a id="navAccount" class="nav-account" href="${link('portal/sign-in.html')}"` +
+    `${current === 'portal' ? ' aria-current="page"' : ''}>Sign in</a></li>`;
 
   const header = `
     <div class="utility-bar">
