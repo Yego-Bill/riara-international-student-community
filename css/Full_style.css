@@ -1004,7 +1004,8 @@ a:focus-visible, button:focus-visible {
 }
 
 /* -------- Disabled button state (used on auth + upload pages) -------- */
-.btn:disabled {
+.btn:disabled,
+.btn.is-unavailable {
   opacity: 0.45;
   cursor: not-allowed;
   pointer-events: none;
