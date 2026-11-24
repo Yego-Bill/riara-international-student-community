@@ -15,36 +15,10 @@
 <link rel="apple-touch-icon" href="assets/favicon/favicon-180.png">
 <link rel="stylesheet" href="css/Full_style.css">
 </head>
-<body>
+<body data-page="contact">
 
-<!-- ============ Utility bar ============ -->
-<div class="utility-bar">
-  <div class="container">
-    <a href="mailto:internationalstudents@riarauniversity.ac.ke">✉️ internationalstudents@riarauniversity.ac.ke</a>
-    <a href="tel:+254758004928">📞 +254 758 004928</a>
-    <span>📍 Riara University, Nairobi</span>
-  </div>
-</div>
-
-<!-- ============ Main nav ============ -->
-<nav class="main-nav">
-  <div class="container">
-    <a href="index.html" class="brand">
-      <span class="brand-name">RIS<span>C</span></span>
-    </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="get-started.html">Get Started</a></li>
-      <li><a href="immigration.html">Immigration</a></li>
-      <li><a href="downloads.html">Downloads</a></li>
-      <li><a href="community.html">Community</a></li>
-      <li><a href="resources.html">Resources</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html" class="nav-cta" aria-current="page">Contact Us</a></li>
-    </ul>
-  </div>
-</nav>
+<div id="site-header"></div>
+<script src="js/layout.js"></script>
 
 <!-- ============ Page header ============ -->
 <header class="page-header">
@@ -80,75 +54,58 @@
   </div>
 </section>
 
+<!-- ============ Emergency ============ -->
+<!-- DRAFT (Student Leader): confirm campus security's number and add it. -->
+<section class="page-section page-section-alt" id="emergency">
+  <div class="container">
+    <div class="section-heading">
+      <h2>In an emergency</h2>
+    </div>
+    <div class="contact-cards contact-page-cards">
+      <div class="contact-card emergency-card">
+        <h4>Police, fire or ambulance</h4>
+        <p class="role">Kenya emergency numbers</p>
+        <a href="tel:999">999</a>
+        <a href="tel:112">112</a>
+      </div>
+      <div class="contact-card emergency-card">
+        <h4>Campus security</h4>
+        <p class="role">Riara University</p>
+        <!-- TODO: add campus security's number -->
+        <span class="muted">Number coming soon</span>
+      </div>
+    </div>
+    <p class="page-section-intro">For a lost passport or Alien Card, report it to the police to get an abstract, then contact the office.</p>
+  </div>
+</section>
+
 <!-- ============ FAQ ============ -->
-<section class="page-section faq-section">
+<!-- TODO (Student Leader): review these. Immigration questions now live on the Immigration page. -->
+<section class="page-section faq-section" id="faqs">
   <div class="container">
     <div class="section-heading">
       <h2>Frequently asked questions</h2>
-      <p class="page-section-intro">
-        <!-- TODO (Student Leader): review these — first-draft FAQs based on what
-             we've covered so far. Edit, remove, or add to match real questions
-             students actually ask you. -->
-      </p>
+      <p class="page-section-intro">Questions about your Student Pass? See the <a href="immigration.html#faqs">Immigration FAQs</a>.</p>
     </div>
 
     <div class="faq-list">
-
       <details class="faq-item" open>
-        <summary>How do I start my Student Pass application?</summary>
-        <p>Start with the checklist on the <a href="immigration.html">Immigration</a> page. It covers the documents, timelines, and steps you need before and after arrival.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>What documents do I need before I arrive in Kenya?</summary>
-        <p>Typically, you will need your admission letter, passport, visa or entry documents, accommodation details, and proof of funding or sponsorship. The exact list can vary by nationality and program.</p>
-      </details>
-
-      <details class="faq-item">
         <summary>Who should I contact for general questions?</summary>
-        <p>Use the international students contact details listed at the top of this page, or email the representative directly for general support and guidance.</p>
+        <p>The International Student Representative — use the email or phone number above. For anything about your Student Pass application, contact Kelvin at the front office.</p>
       </details>
-
       <details class="faq-item">
         <summary>Can I get help with settling in after arrival?</summary>
-        <p>Yes. The office and student community can help with practical matters such as housing, transport, banking, SIM cards, and getting connected to other students.</p>
+        <p>Yes. The office and student community can help with practical matters such as housing, transport, banking, SIM cards, and getting connected to other students. See <a href="living-in-kenya.html">Living in Kenya</a>.</p>
       </details>
-
+      <details class="faq-item">
+        <summary>How do I meet other international students?</summary>
+        <p>Join the <a href="community.html">WhatsApp community</a> and come to our <a href="events.html">events</a> — orientation is a great place to start.</p>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- ============ Footer ============ -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h4>Riara International Student Centre</h4>
-        <p>A welcome hub for Riara University's international students, built to make your transition easier.</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="get-started.html">Get Started</a></li>
-          <li><a href="immigration.html">Immigration</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="resources.html">Resources</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:internationalstudents@riarauniversity.ac.ke">internationalstudents@riarauniversity.ac.ke</a></li>
-          <li><a href="tel:+254758004928">+254 758 004928</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2026 Riara University — International Student Support. Built by the Office of the International Student Leader.
-    </div>
-  </div>
-</footer>
-
+<div id="site-footer"></div>
 <script src="js/main.js"></script>
 </body>
 </html>

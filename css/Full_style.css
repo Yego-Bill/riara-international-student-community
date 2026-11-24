@@ -1421,3 +1421,113 @@ a:focus-visible, button:focus-visible {
 /* -------- Sign-in note and staff check message -------- */
 .field-note { font-size: 0.8rem; color: var(--color-ink-soft); margin-top: -0.4rem; }
 .checking-msg { text-align: center; color: var(--color-ink-soft); padding: var(--space-2xl) 0; }
+/* ==========================================================================
+   RESTRUCTURE (5 sections) — new components
+   ========================================================================== */
+
+/* -------- Announcement bar (Home) -------- */
+.announcement-bar {
+  background: var(--color-gold);
+  color: var(--color-black);
+  font-size: 0.95rem;
+}
+.announcement-bar .container { padding-top: 0.7rem; padding-bottom: 0.7rem; }
+.announcement-bar[hidden] { display: none; }
+
+/* -------- Journey cards (Home) -------- */
+.journey { padding: var(--space-2xl) 0 var(--space-xl); }
+.journey-card {
+  color: var(--color-ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.journey-card:hover,
+.journey-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(59, 31, 107, 0.12);
+}
+.journey-card .card-link {
+  color: var(--color-magenta);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* -------- Home: events + community -------- */
+.home-events { padding: var(--space-xl) 0; }
+.community-strip { padding: 0 0 var(--space-2xl); }
+.section-heading-row {
+  max-width: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+.see-all {
+  color: var(--color-magenta);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.see-all:hover { text-decoration: underline; }
+
+/* -------- Jump links ("On this page") -------- */
+.jump-links {
+  background: #fff;
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 64px;               /* sits just under the sticky main nav */
+  z-index: 40;
+}
+.jump-links .container {
+  display: flex;
+  gap: var(--space-md);
+  overflow-x: auto;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  scrollbar-width: thin;
+}
+.jump-links a {
+  white-space: nowrap;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-purple);
+}
+.jump-links a:hover { color: var(--color-magenta); text-decoration: underline; }
+
+/* Sections linked from jump links shouldn't hide under the sticky bars */
+section[id], .resource-topic[id] { scroll-margin-top: 130px; }
+
+/* -------- Shared bits -------- */
+.page-section-alt { background: #fff; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+.text-link { color: var(--color-magenta); font-weight: 600; }
+.text-link:hover { text-decoration: underline; }
+.resource-topic .topic-body a:not(.btn),
+.checklist-item label .sub a,
+.page-section-intro a,
+.faq-item p a,
+.last-updated a { color: var(--color-magenta); text-decoration: underline; }
+
+/* Immigration tabs: Renewals + Forms inside each pass */
+.tab-subsection { margin-top: var(--space-lg); }
+.tab-subsection h3 { margin-bottom: var(--space-sm); }
+.tab-subsection p { margin-bottom: var(--space-sm); max-width: 70ch; }
+
+.last-updated {
+  margin-top: var(--space-lg);
+  font-size: 0.88rem;
+  color: var(--color-ink-soft);
+}
+
+.emergency-card { border-top: 4px solid var(--color-magenta); }
+
+@media (max-width: 700px) {
+  .jump-links { top: 58px; }
+}
+
+/* -------- Printing (e.g. the pre-arrival checklist) -------- */
+@media print {
+  .utility-bar, .main-nav, .jump-links, .site-footer, .no-print,
+  .announcement-bar { display: none !important; }
+  .page-header { background: none; padding: 0 0 1rem; }
+  .page-header h1, .page-header .breadcrumb { color: #000; }
+  .page-section { padding: 1rem 0; }
+}

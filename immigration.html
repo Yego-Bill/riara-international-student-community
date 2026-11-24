@@ -15,36 +15,10 @@
 <link rel="apple-touch-icon" href="assets/favicon/favicon-180.png">
 <link rel="stylesheet" href="css/Full_style.css">
 </head>
-<body>
+<body data-page="immigration">
 
-<!-- ============ Utility bar ============ -->
-<div class="utility-bar">
-  <div class="container">
-    <a href="mailto:internationalstudents@riarauniversity.ac.ke">✉️ internationalstudents@riarauniversity.ac.ke</a>
-    <a href="tel:+254758004928">📞 +254 758 004928</a>
-    <span>📍 Riara University, Nairobi</span>
-  </div>
-</div>
-
-<!-- ============ Main nav ============ -->
-<nav class="main-nav">
-  <div class="container">
-    <a href="index.html" class="brand">
-      <span class="brand-name">RIS<span>C</span></span>
-    </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="get-started.html">Get Started</a></li>
-      <li><a href="immigration.html" aria-current="page">Immigration</a></li>
-      <li><a href="downloads.html">Downloads</a></li>
-      <li><a href="community.html">Community</a></li>
-      <li><a href="resources.html">Resources</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
-    </ul>
-  </div>
-</nav>
+<div id="site-header"></div>
+<script src="js/layout.js"></script>
 
 <!-- ============ Page header ============ -->
 <header class="page-header">
@@ -54,8 +28,17 @@
   </div>
 </header>
 
+<nav class="jump-links" aria-label="On this page">
+  <div class="container">
+    <a href="#requirements">Passes &amp; requirements</a>
+    <a href="#how-we-help">How we can help</a>
+    <a href="#current-students">Already studying here</a>
+    <a href="#faqs">FAQs</a>
+  </div>
+</nav>
+
 <!-- ============ Self-service info: tabs ============ -->
-<section class="page-section">
+<section class="page-section" id="requirements">
   <div class="container">
     <div class="section-heading">
       <h2>What you need to do</h2>
@@ -118,6 +101,44 @@
             <li>Citizens of East African Community countries (Uganda, Tanzania, Rwanda, Burundi) are exempt from the Student/Research/Internship Pass fee — but everyone must still apply and obtain the pass.</li>
           </ul>
         </div>
+
+        <!-- DRAFT (Student Leader): confirm renewal timing with Kelvin. -->
+        <div class="tab-subsection">
+          <h3>Renewals</h3>
+          <p>Your Student Pass must be renewed annually, or every two years, depending on the duration approved. For a renewal you'll need the documents marked "renewal" above, plus certified transcripts or progress reports instead of your academic certificates.</p>
+          <p>Check your pass's expiry date now and start the renewal with Kelvin well before it runs out — processing can take a while.</p>
+        </div>
+        <div class="tab-subsection">
+          <h3>Forms</h3>
+          <!-- TODO: when a PDF is ready, put it in assets/Documents/ and replace the
+               "Coming soon" span with: <a href="assets/Documents/FILE.pdf" class="btn btn-secondary" target="_blank">Download</a> -->
+          <div class="downloads-grid">
+            <div class="download-card">
+              <div class="file-icon">📝</div>
+              <div class="file-info">
+                <h4>Form 30 (Student Pass Application)</h4>
+                <p>Blank application form, to be completed and stamped by Riara.</p>
+              </div>
+              <span class="btn btn-secondary is-unavailable" aria-disabled="true">Coming soon</span>
+            </div>
+            <div class="download-card">
+              <div class="file-icon">📄</div>
+              <div class="file-info">
+                <h4>Student Pass Document Checklist</h4>
+                <p>All 11 required documents, in one printable list.</p>
+              </div>
+              <span class="btn btn-secondary is-unavailable" aria-disabled="true">Coming soon</span>
+            </div>
+            <div class="download-card">
+              <div class="file-icon">📋</div>
+              <div class="file-info">
+                <h4>Sample Sponsor Commitment Letter</h4>
+                <p>A template your sponsor can use for their signed letter.</p>
+              </div>
+              <span class="btn btn-secondary is-unavailable" aria-disabled="true">Coming soon</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -149,6 +170,35 @@
             <li>Documents in a foreign language must be translated into English by an embassy, public notary, or recognised institution.</li>
           </ul>
         </div>
+
+        <!-- DRAFT (Student Leader): confirm with Kelvin. -->
+        <div class="tab-subsection">
+          <h3>Renewals</h3>
+          <p>Renewing uses the same application (Form 30) and the documents marked "renewal" above. Start before your current pass expires, and speak to the office if your internship or research period changes.</p>
+        </div>
+        <div class="tab-subsection">
+          <h3>Forms</h3>
+          <!-- TODO: when a PDF is ready, put it in assets/Documents/ and replace the
+               "Coming soon" span with: <a href="assets/Documents/FILE.pdf" class="btn btn-secondary" target="_blank">Download</a> -->
+          <div class="downloads-grid">
+            <div class="download-card">
+              <div class="file-icon">📝</div>
+              <div class="file-info">
+                <h4>Form 30 (Internship / Research Pass)</h4>
+                <p>The same application form, authorised by the host institution.</p>
+              </div>
+              <span class="btn btn-secondary is-unavailable" aria-disabled="true">Coming soon</span>
+            </div>
+            <div class="download-card">
+              <div class="file-icon">📄</div>
+              <div class="file-info">
+                <h4>Internship / Research Pass Checklist</h4>
+                <p>Document checklist for interns and researchers.</p>
+              </div>
+              <span class="btn btn-secondary is-unavailable" aria-disabled="true">Coming soon</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -176,13 +226,33 @@
             <li>A penalty of Ksh 1,000 is charged for every year (or part of a year) that residency went unregistered.</li>
           </ul>
         </div>
+
+        <div class="tab-subsection">
+          <h3>Renewals</h3>
+          <p>Registration certificates are valid for up to two years. To renew, submit a new Form 50 with the documents marked "renewal" above, together with your previous Alien Card.</p>
+        </div>
+        <div class="tab-subsection">
+          <h3>Forms</h3>
+          <!-- TODO: when a PDF is ready, put it in assets/Documents/ and replace the
+               "Coming soon" span with: <a href="assets/Documents/FILE.pdf" class="btn btn-secondary" target="_blank">Download</a> -->
+          <div class="downloads-grid">
+            <div class="download-card">
+              <div class="file-icon">📝</div>
+              <div class="file-info">
+                <h4>Form 50 (Alien Card Application)</h4>
+                <p>Blank application form for foreign national registration.</p>
+              </div>
+              <span class="btn btn-secondary is-unavailable" aria-disabled="true">Coming soon</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ How we can help ============ -->
-<section class="help-section">
+<section class="help-section" id="how-we-help">
   <div class="container">
     <div class="section-heading">
       <h2>How we can help</h2>
@@ -224,37 +294,94 @@
   </div>
 </section>
 
-<!-- ============ Footer ============ -->
-<footer class="site-footer">
+<!-- ============ Already studying here ============ -->
+<!-- DRAFT (Student Leader): check each point with Kelvin before publishing. -->
+<section class="page-section" id="current-students">
   <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h4>Riara International Student Centre</h4>
-        <p>A welcome hub for Riara University's international students, built to make your transition easier.</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
+    <div class="section-heading">
+      <h2>Already studying here</h2>
+      <p class="page-section-intro">Your immigration responsibilities don't end once your pass is issued.</p>
+    </div>
+
+    <div class="resource-topic">
+      <div class="topic-icon">🔄</div>
+      <div class="topic-body">
+        <h3>Keep your pass and Alien Card valid</h3>
         <ul>
-          <li><a href="get-started.html">Get Started</a></li>
-          <li><a href="immigration.html">Immigration</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="resources.html">Resources</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:internationalstudents@riarauniversity.ac.ke">internationalstudents@riarauniversity.ac.ke</a></li>
-          <li><a href="tel:+254758004928">+254 758 004928</a></li>
+          <li>Note the expiry dates of your Student Pass and your Alien Card somewhere you'll see them.</li>
+          <li>Start renewals early with Kelvin — see the Renewals section in each tab above.</li>
+          <li>Unregistered residency is penalised for every year (or part of a year) it goes unregistered.</li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2026 Riara University — International Student Support. Built by the Office of the International Student Leader.
+
+    <div class="resource-topic">
+      <div class="topic-icon">✈️</div>
+      <div class="topic-body">
+        <h3>Travelling outside Kenya and coming back</h3>
+        <ul>
+          <li>Before you travel, check that your Student Pass will still be valid on the day you return.</li>
+          <li>Carry your passport and your pass, and keep copies of both on your phone.</li>
+          <li>If your pass is still being processed, speak to the office before you book — leaving the country during processing can cause problems.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="resource-topic">
+      <div class="topic-icon">🎓</div>
+      <div class="topic-body">
+        <h3>Graduating or leaving Kenya for good</h3>
+        <ul>
+          <li>Let the office know when you're finishing or leaving, so your records can be updated.</li>
+          <li>Your Alien Card belongs to the Kenyan government and must be surrendered to an immigration officer when you leave Kenya for good.</li>
+          <li>A Student Pass only covers your studies. If you plan to stay and work, you'll need a different permit — ask the office for guidance.</li>
+        </ul>
+      </div>
     </div>
   </div>
-</footer>
+</section>
 
+<!-- ============ Immigration FAQs ============ -->
+<!-- TODO (Student Leader): edit or add questions students actually ask. -->
+<section class="page-section faq-section" id="faqs">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Immigration FAQs</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>How do I start my Student Pass application?</summary>
+        <p>Gather the documents in the Student Pass tab above, then visit Kelvin at the front office. He'll confirm the exact list for your case and submit the application for you. See <a href="#how-we-help">How we can help</a>.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What documents do I need before I arrive in Kenya?</summary>
+        <p>Typically your admission letter, passport, entry documents, accommodation details, and proof of funding or sponsorship. The exact list can vary by nationality and programme — see <a href="before-you-arrive.html">Before you arrive</a>.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How long does the Student Pass take?</summary>
+        <p>It varies. After you pay, processing can take a while — which is why applications should go in at least three months before your course begins. Kelvin will keep you updated.</p>
+      </details>
+      <details class="faq-item">
+        <summary>My entry stamp expires before my Student Pass is ready. What do I do?</summary>
+        <p>Apply for an extension before your entry stamp lapses, and keep doing so until your Student Pass is issued. Speak to the office if you're unsure.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I work while on a Student Pass?</summary>
+        <p>No. A Student Pass does not allow any form of employment, paid or unpaid.</p>
+      </details>
+      <details class="faq-item">
+        <summary>I'm from an East African Community country. Do I still need a Student Pass?</summary>
+        <p>Yes. Citizens of Uganda, Tanzania, Rwanda and Burundi don't pay the pass fee, but must still apply for and hold a Student Pass.</p>
+      </details>
+    </div>
+
+    <!-- Update this date whenever the immigration information is checked. -->
+    <p class="last-updated">Information last checked: <time datetime="2026-11">November 2026</time>. Rules and fees can change — always confirm with the office or the <a href="https://immigration.go.ke" target="_blank" rel="noopener">Department of Immigration Services</a>.</p>
+  </div>
+</section>
+
+<div id="site-footer"></div>
 <script src="js/main.js"></script>
 </body>
 </html>

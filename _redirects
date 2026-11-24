@@ -1,0 +1,7 @@
+# Netlify redirects: old page addresses -> new ones, so shared links keep working.
+/get-started.html   /before-you-arrive.html   301
+/get-started        /before-you-arrive        301
+/resources.html     /living-in-kenya.html     301
+/resources          /living-in-kenya          301
+/downloads.html     /immigration.html         301
+/downloads          /immigration              301

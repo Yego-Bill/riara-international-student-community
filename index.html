@@ -4,9 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>International Students | Riara University</title>
-<meta name="description" content="Welcome hub for Riara University's international students — student pass guidance, community, and settling-in support.">
+<meta name="description" content="Welcome hub for Riara University's international students — Student Pass guidance, settling in, events and community.">
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,94 +15,107 @@
 <link rel="apple-touch-icon" href="assets/favicon/favicon-180.png">
 <link rel="stylesheet" href="css/Full_style.css">
 </head>
-<body>
+<body data-page="home">
 
-<!-- ============ Utility bar ============ -->
-<div class="utility-bar">
+<div id="site-header"></div>
+<script src="js/layout.js"></script>
+
+<!-- ============ Announcement ============ -->
+<!-- Shown only when there's something to announce. Remove the "hidden"
+     attribute and edit the text to show it. (Later this will come from the
+     staff dashboard instead.) -->
+<div class="announcement-bar" hidden>
   <div class="container">
-    <!-- TODO: confirm real phone number for International Students office -->
-    <a href="tel:+254758004928">📞 +254 758 004 928</a>
-    <!-- TODO: confirm real email address -->
-    <a href="mailto:internationalstudents@riarauniversity.ac.ke">✉️ internationalstudents@riarauniversity.ac.ke</a>
-    <span>📍 Riara University, Nairobi</span>
+    <strong>Announcement:</strong> <span>Text of the announcement goes here.</span>
   </div>
 </div>
 
-<!-- ============ Main nav ============ -->
-<nav class="main-nav">
-  <div class="container">
-    <a href="index.html" class="brand">
-      <span class="brand-name">RIS<span>C</span></span>
-    </a>
-
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="get-started.html">Get Started</a></li>
-      <li><a href="immigration.html">Immigration</a></li>
-      <li><a href="downloads.html">Downloads</a></li>
-      <li><a href="community.html">Community</a></li>
-      <li><a href="resources.html">Resources</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- ============ Hero ============ -->
+<!-- ============ Hero + journey ============ -->
 <header class="hero">
   <div class="container">
     <div class="hero-copy">
       <p class="hero-eyebrow">Welcome to Riara University</p>
       <h1>Your journey in Kenya starts here.</h1>
       <p>Everything you need as an international student — from your Student Pass to finding your people — in one place, built by and for Riara's international community.</p>
-      <div class="hero-actions">
-        <a href="immigration.html" class="btn btn-primary">Start your Student Pass</a>
-        <a href="community.html" class="btn btn-secondary btn-on-dark">Join the community</a>
-      </div>
     </div>
 
-    <!-- TODO: replace .hero-visual background in styles.css with a real
-         photo once available (see comment in styles.css) -->
+    <!-- TODO: replace .hero-visual background in Full_style.css with a real
+         photo once available (see comment in Full_style.css) -->
     <div class="hero-visual">
       <p class="hero-visual-caption">Photo of Riara's international students coming soon</p>
     </div>
   </div>
 </header>
 
-<!-- ============ Quick links ============ -->
-<section class="quick-links">
+<section class="journey">
   <div class="container">
     <div class="section-heading">
-      <h2>Where to start</h2>
-      <p>Four things every new international student needs, up front.</p>
+      <h2>Where are you in your journey?</h2>
+      <p>Pick the one that fits you best.</p>
     </div>
 
     <div class="quick-links-grid">
-      <div class="quick-link-card">
-        <h3>Before you arrive</h3>
-        <p>A checklist of documents and steps to sort out before you land in Kenya.</p>
-        <a href="get-started.html">Get started →</a>
-      </div>
+      <a class="quick-link-card journey-card" href="before-you-arrive.html">
+        <h3>I'm preparing to come</h3>
+        <p>Documents, travel and housing to sort out before you land in Kenya.</p>
+        <span class="card-link">Before you arrive →</span>
+      </a>
 
-      <div class="quick-link-card">
-        <h3>Student Pass</h3>
-        <p>What you're responsible for, and what our office can handle for you.</p>
-        <a href="immigration.html">See the process →</a>
-      </div>
+      <a class="quick-link-card journey-card" href="living-in-kenya.html#arriving">
+        <h3>I've just arrived</h3>
+        <p>Arriving at JKIA, your first week, SIM cards, banking and getting around.</p>
+        <span class="card-link">Living in Kenya →</span>
+      </a>
 
-      <div class="quick-link-card">
-        <h3>Join the community</h3>
-        <p>Connect with other international students before you even arrive.</p>
-        <a href="community.html">Join WhatsApp →</a>
-      </div>
+      <a class="quick-link-card journey-card" href="immigration.html">
+        <h3>I need my Student Pass</h3>
+        <p>What you're responsible for, and how our office applies for you.</p>
+        <span class="card-link">Immigration →</span>
+      </a>
 
-      <div class="quick-link-card">
-        <h3>Settling in</h3>
-        <p>SIM cards, banking, housing, transport — the practical stuff.</p>
-        <a href="resources.html">Explore resources →</a>
+      <a class="quick-link-card journey-card" href="immigration.html#current-students">
+        <h3>I'm already studying here</h3>
+        <p>Renewals, travelling and coming back, and what to do when you leave.</p>
+        <span class="card-link">For current students →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Upcoming events ============ -->
+<!-- Keep this to the next 2–3 events. The full list is on events.html.
+     (Later these will come from the staff dashboard.) -->
+<section class="home-events">
+  <div class="container">
+    <div class="section-heading section-heading-row">
+      <h2>Upcoming events</h2>
+      <a href="events.html" class="see-all">See all events →</a>
+    </div>
+
+    <div class="event-list">
+      <div class="event-card">
+        <div class="event-date-badge is-tba">
+          <span class="day">TBA</span>
+        </div>
+        <div class="event-info">
+          <h3>Graduation Dinner</h3>
+          <p class="event-meta">Date not yet announced</p>
+          <p>A celebration dinner for graduating international students.</p>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Community strip ============ -->
+<section class="community-strip">
+  <div class="container">
+    <div class="whatsapp-cta">
+      <div class="cta-copy">
+        <h3>Join the Riara International Students Community</h3>
+        <p>One WhatsApp Community, with country groups inside. <a href="community.html">How it works →</a></p>
+      </div>
+      <a href="https://chat.whatsapp.com/BRgVvFkWHRCBCZi2ztkoza" class="btn btn-whatsapp" target="_blank" rel="noopener">Join on WhatsApp →</a>
     </div>
   </div>
 </section>
@@ -119,38 +131,7 @@
   </div>
 </section>
 
-<!-- ============ Footer ============ -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h4>Riara International Student Centre</h4>
-        <p>A welcome hub for Riara University's international students, built to make your transition easier.</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="get-started.html">Get Started</a></li>
-          <li><a href="immigration.html">Immigration</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="resources.html">Resources</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <!-- TODO: confirm real contact details -->
-          <li><a href="mailto:internationalstudents@riarauniversity.ac.ke">internationalstudents@riarauniversity.ac.ke</a></li>
-          <li><a href="tel:+254758004928">+254 758 004 928</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2026 Riara University — International Student Support. Built by the Office of the International Student Leader.
-    </div>
-  </div>
-</footer>
-
+<div id="site-footer"></div>
 <script src="js/main.js"></script>
 </body>
 </html>
