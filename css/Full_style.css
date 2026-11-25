@@ -1721,3 +1721,12 @@ section[id], .resource-topic[id] { scroll-margin-top: 130px; }
 @media (max-width: 600px) {
   .upload-item .upload-info { flex: 1 1 0; min-width: 0; }
 }
+
+/* Phones: less empty space before the sign-in form */
+@media (max-width: 600px) {
+  .auth-section { padding: var(--space-md) 0 var(--space-xl); }
+  .auth-card { padding: var(--space-lg) var(--space-md); border-radius: 0; border-left: 0; border-right: 0; }
+  body[data-page="portal"] .page-header { padding: 1.5rem 0 1.25rem; }
+  body[data-page="portal"] .page-header h1 { font-size: 1.8rem; }
+  .pilot-banner { font-size: 0.82rem; }
+}
